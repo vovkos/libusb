@@ -904,10 +904,17 @@ void API_EXPORTED libusb_free_device_list(libusb_device **list,
 }
 
 /** \ingroup libusb_dev
- * Get the backend-specific handle (session data in terms of libusb) of a device.
- * Can be used for direct low-level access to the backend when necessary.
+ * Returns the backend-specific identifier of the underlying system device tree
+ * node. Can be used to find the corresponding system device and directly query
+ * it (or access it otherwise) when and if necessary.
+ *
+ * Relevant backends:
+ * - Darwin: IOKit `sessionID`
+ * - Windows WinUSB: `DEVINST`
+ * - Linux, BSD: `busnum << 8 | devnum`
+ *
  * \param dev a device
- * \returns the backend-specific handle (session data)
+ * \returns the backend-specific device identifier
  */
 unsigned long API_EXPORTED libusb_get_session_data(libusb_device *dev)
 {
