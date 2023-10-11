@@ -913,6 +913,8 @@ void API_EXPORTED libusb_free_device_list(libusb_device **list,
  * - Windows WinUSB: `DEVINST`
  * - Linux, BSD: `busnum << 8 | devnum`
  *
+ * Since version 1.0.27, \ref LIBUSB_API_VERSION >= 0x0100010B
+ *
  * \param dev a device
  * \returns the backend-specific device identifier
  */

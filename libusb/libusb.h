@@ -151,11 +151,6 @@ typedef SSIZE_T ssize_t;
 /* The following is kept for compatibility, but will be deprecated in the future */
 #define LIBUSBX_API_VERSION LIBUSB_API_VERSION
 
-/** \ingroup libusb_dev
- * Can be used to determine the presence of libusb_get_session_data for
- * conditional compilation */
-#define LIBUSB_HAS_GET_SESSION_DATA 1
-
 #if defined(__cplusplus)
 extern "C" {
 #endif
